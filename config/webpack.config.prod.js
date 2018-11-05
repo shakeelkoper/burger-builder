@@ -61,7 +61,11 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     },
     {
       loader: require.resolve('css-loader'),
-      options: cssOptions,
+      options: {
+        cssOptions,
+        modules: true,
+        localIdentName: '[name]__[local]__[hash:base64:5]'
+      }
     },
     {
       // Options for PostCSS as we reference these options twice
@@ -341,8 +345,8 @@ module.exports = {
             loader: getStyleLoaders({
               importLoaders: 1,
               sourceMap: shouldUseSourceMap,
-              modules: true,
-              getLocalIdentName: '[name]__[local]__[hash:base64:5]'
+              // modules: true,
+              // localIdentName: '[name]__[local]__[hash:base64:5]'
             }),
             // Don't consider CSS imports dead code even if the
             // containing package claims to have no side effects.
