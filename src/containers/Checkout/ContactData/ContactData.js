@@ -3,6 +3,7 @@ import Button from "../../../components/UI/Button/Button";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import axios from "../../../axios-orders";
 import classes from "./ContactData.css";
+import Input from "../../../components/UI/Input/Input";
 class ContactData extends Component {
 	state = {
 		name: "",
@@ -47,26 +48,26 @@ class ContactData extends Component {
 	render() {
 		let form = (
 			<form>
-				<input
-					className={classes.Input}
+				<Input
+					inputtype="input"
 					type="text"
 					name="name"
 					placeholder="you Name"
 				/>
-				<input
-					className={classes.Input}
+				<Input
+					inputtype="input"
 					type="email"
 					name="email"
 					placeholder="you Mail"
 				/>
-				<input
-					className={classes.Input}
+				<Input
+					inputtype="input"
 					type="text"
 					name="street"
 					placeholder="Street"
 				/>
-				<input
-					className={classes.Input}
+				<Input
+					inputtype="input"
 					type="text"
 					name="postal"
 					placeholder="Postal Code"
