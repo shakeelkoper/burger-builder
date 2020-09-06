@@ -36,7 +36,7 @@ const fetchOrderSuccess = (state, action) => {
 	return updateObject(state, { orders: action.orders, loading: false });
 };
 
-const fetchOrderFail = (state, action) => {
+const fetchOrdersFail = (state, action) => {
 	return updateObject(state, { loading: false });
 };
 
@@ -55,7 +55,7 @@ const reducer = (state = initialState, action) => {
 		case actionTypes.FETCH_ORDER_SUCCESS:
 			return fetchOrderSuccess(state, action);
 		case actionTypes.FETCH_ORDER_FAIL:
-			return fetchOrderFail(state, action);
+			return fetchOrdersFail(state, action);
 		default:
 			return state;
 	}
