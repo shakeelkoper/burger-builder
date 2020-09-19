@@ -36,7 +36,7 @@ export const logoutSucceed = () => {
 export const checkAuthTimeout = (expirationTime) => {
   return {
     type: actionTypes.AUTH_CHECK_TIMEOUT,
-    expirationTime: 10
+    expirationTime: expirationTime
   };
 };
 export const auth = (email, password, isSignup) => {
